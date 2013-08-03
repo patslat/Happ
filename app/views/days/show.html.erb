@@ -1,0 +1,9 @@
+<div class="day-show">
+  <div class="day-show-header">
+    <h3><%= @day.created_at.to_date.readable_inspect %></h3>
+  </div>
+
+  <div class="day-rating-details">
+    <%= render :partial => @day.rating %>
+  </div>
+</div>
