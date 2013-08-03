@@ -4,5 +4,7 @@ class CreateDays < ActiveRecord::Migration
       t.integer :user_id, :null => false
       t.timestamps
     end
+
+    add_index :days, :user_id
   end
 end
