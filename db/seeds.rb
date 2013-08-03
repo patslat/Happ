@@ -13,8 +13,18 @@ puts 'user: ' << user.name
 
 today = DateTime.now
 ((today - 100)..today).each do |day|
-  Day.new(
+  day = Day.create(
     :user_id => 1,
     :created_at => day,
   )
+
+  Rating.create(
+    :day_id => day.id,
+    :user_id => 1,
+    :sleep_rating => (rand * 7).round,
+    :diet_rating => (rand * 7).round,
+    :exercise_rating => (rand * 7).round,
+    :social_rating => (rand * 7).round
+  )
+
 end
