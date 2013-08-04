@@ -4,10 +4,10 @@ window.Happ = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    Happ.Routers.Days()
   }
 };
 
 $(document).ready(function(){
-  Happ.initialize();
+  new Happ.initialize();
 });
