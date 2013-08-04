@@ -3,11 +3,10 @@ window.Happ = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
-    Happ.Routers.Days()
+  initialize: function($content) {
   }
 };
 
 $(document).ready(function(){
-  new Happ.initialize();
+  new Happ.initialize($('#content');
 });

@@ -1,5 +1,6 @@
 Happ.Collections.Days = Backbone.Collection.extend({
 
-  model: Happ.Models.Day
+  model: Happ.Models.Day,
+  url: /days,
 
 });
