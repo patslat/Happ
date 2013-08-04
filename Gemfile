@@ -7,7 +7,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'jquery-rails'
+gem 'backbone-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'

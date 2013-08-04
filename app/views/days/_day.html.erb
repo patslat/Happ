@@ -1,3 +1,3 @@
 <div class='day-link'>
-  <%=link_to day.created_at, day_url(day) %>
+  <%=link_to day.created_at.to_date.readable_inspect, day_url(day) %>
 </div>
