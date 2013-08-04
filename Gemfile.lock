@@ -203,6 +203,7 @@ DEPENDENCIES
   email_spec
   figaro
   hub
+  jquery-rails
   launchy
   quiet_assets
   rails (= 3.2.13)
