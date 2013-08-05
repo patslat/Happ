@@ -1,10 +1,9 @@
-Happ.Views.DaysSummary = Backbone.View.Extend({
+Happ.Views.DaysSummary = Backbone.View.extend({
   loadingTemplate: JST['days/summary_loading'],
 
   template: JST['days/summary'],
 
   render: function() {
-
     this.$el.html(this.loadingTemplate());
     return this;
   }
