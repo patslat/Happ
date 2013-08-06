@@ -10,7 +10,7 @@ function xkcdplot() {
         magnitude = 0.003,
         xlabel = "Time",
         ylabel = "Quality",
-        title = "The most important graph ever made",
+        title = "The quality of your life",
         xlim,
         ylim;
 
@@ -100,7 +100,7 @@ function xkcdplot() {
         // And a title.
         el.append("text").attr("class", "title")
                               .attr("text-anchor", "end")
-                              .attr("x", width)
+                              .attr("x", width / 1.2 )
                               .attr("y", 0)
                               .text(title);
 
@@ -134,6 +134,28 @@ function xkcdplot() {
                       });
 
         return xkcd;
+    };
+
+    xkcd.addLegend = function () {
+      var s = 0,
+          aa = 35;
+      elements.reverse().forEach(function(element) {
+        el.append("svg:line").attr("x1", width - 100)
+                             .attr("y1", height - aa + 5)
+                             .attr("x2", width - 80)
+                             .attr("y2", height - aa + 5)
+                             .style("stroke", element.opts.stroke)
+                             .style("stroke-width", 3)
+                             .style("fill", "none")
+                             .attr("class", "bgline")
+        el.append("text").attr("class", "x label")
+                              .attr("text-anchor", "begin")
+                              .attr("x", width - 75)
+                              .attr("y", height - aa)
+                              .attr("dy", ".75em")
+                              .text(element.opts.name);
+        aa += 25;
+      });
     };
 
     // Plot styles.
