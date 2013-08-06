@@ -6,8 +6,8 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    ":id": "show",
-    "summary": "summary"
+    "summary": "summary",
+    "days/:id": "show",
   },
 
   index: function() {
