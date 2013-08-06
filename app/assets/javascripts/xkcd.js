@@ -2,14 +2,14 @@ function xkcdplot() {
 
     // Default parameters.
     var width = 600,
-        height = 300,
+        height = 500,
         margin = 20,
         arrowSize = 12,
         arrowAspect = 0.4,
         arrowOffset = 6,
         magnitude = 0.003,
         xlabel = "Time",
-        ylabel = "Awesomeness",
+        ylabel = "Quality",
         title = "The most important graph ever made",
         xlim,
         ylim;

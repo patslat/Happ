@@ -14,7 +14,7 @@ puts 'user: ' << user.name
 u = User.create(:name => "p", :email => "p@g.com", :password => "12345678", :password_confirmation => "12345678")
 
 today = DateTime.now
-((today - 100)..today).each do |day|
+((today - 100)..today).each_with_index do |day, idx|
   day_model = Day.create(:user_id => 2)
   day_model.date = day.to_date.readable_inspect
   day_model.save!
@@ -22,11 +22,11 @@ today = DateTime.now
   Rating.create(
     :day_id => day_model.id,
     :user_id => 2,
-    :overall_rating => (rand * 7).round,
-    :sleep_rating => (rand * 7).round,
-    :diet_rating => (rand * 7).round,
-    :exercise_rating => (rand * 7).round,
-    :social_rating => (rand * 7).round
+    :overall_rating => ((idx / 100.0) * 10.0),
+    :sleep_rating => ((idx / 100.0) * 6.0),
+    :diet_rating => ((idx / 100.0) * 7.0),
+    :exercise_rating => ((idx / 100.0) * 8.0),
+    :social_rating => ((idx / 100.0) * 5.0)
   )
 
 end
