@@ -4,3 +4,10 @@
 <h3>Diet Rating: <%= model.get("rating").escape("diet_rating").slice(0, 4) %></h3>
 <h3>Exercise Rating: <%= model.get("rating").escape("exercise_rating").slice(0, 4) %></h3>
 <h3>Social Rating: <%= model.get("rating").escape("social_rating").slice(0, 4) %></h3>
+
+<% if (previous) { %>
+  <h1><a href="#/days/<%= previous.id %>">BIG LEFT ARROW</a></h1>
+<% } %>
+<% if (next) { %>
+  <h1><a href="#/days/<%= next.id %>">BIG RIGHT ARROW</a></h1>
+<% } %>

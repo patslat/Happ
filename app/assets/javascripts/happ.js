@@ -8,7 +8,8 @@ window.Happ = {
     days.fetch({
       success: function(collection) {
         new Happ.Routers.Days($content, days);
-        Backbone.history.start()
+        Backbone.history.start();
+        Backbone.history.navigate("#/days/" + collection.last().id);
       }
     })
   }

@@ -10,6 +10,20 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="header">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="brand" href="#"><strong>Happ</strong></a>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li id="days-index"><a href="#">Entries</a></li>
+            <li class="divider-vertical"></li>
+            <li id="days-summary"><a href="#/summary">Summary</a></li>
+            <li class="divider-vertical"></li>
+        </div>
+      </div>
+
+    </div>
     <%= yield %>
   </body>
 </html>
