@@ -4,18 +4,15 @@ Happ.Views.DaysSummary = Backbone.View.extend({
   template: JST['days/summary'],
 
   render: function() {
-    var xmin = -1.0,
-        xmax = 7,
-        N = 100,
-        overallData = this.collection.getData("overall_rating"),
-        sleepData = this.collection.getData("sleep_rating"),
-        dietData = this.collection.getData("diet_rating"),
-        exerciseData = this.collection.getData("exercise_rating"),
-        socialData = this.collection.getData("social_rating");
+    overallData = this.collection.getData("overall_rating"),
+    sleepData = this.collection.getData("sleep_rating"),
+    dietData = this.collection.getData("diet_rating"),
+    exerciseData = this.collection.getData("exercise_rating"),
+    socialData = this.collection.getData("social_rating");
 
     // Build the plot.
     var plot = xkcdplot();
-    plot("body");
+    plot("#graph");
     // Add the lines.
     plot.plot(overallData, {stroke: "blue", name: "Overall Day"});
     plot.plot(sleepData, {stroke: "red", name: "Sleep"});
@@ -25,7 +22,7 @@ Happ.Views.DaysSummary = Backbone.View.extend({
     // Add the Legend
     plot.addLegend();
     // Render the image.
-    plot.xlim([-1.5, 7.5]).draw();
+    plot.xlim([-.5, 10.5]).ylim([0, 10.5]).draw();
 
     return this;
   }

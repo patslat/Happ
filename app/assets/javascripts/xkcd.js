@@ -40,6 +40,12 @@ function xkcdplot() {
         return xkcd;
     };
 
+    xkcd.ylim = function () {
+      if (!arguments.length) return ylim;
+      ylim = arguments[0];
+      return xkcd;
+    };
+
     // Do the render.
     xkcd.draw = function () {
         // Set the axes limits.
@@ -49,7 +55,6 @@ function xkcdplot() {
         // Compute the zero points where the axes will be drawn.
         var x0 = xscale(0),
             y0 = yscale(0);
-
         // Draw the axes.
         var axis = d3.svg.line().interpolate(xinterp);
         el.selectAll(".axis").remove();

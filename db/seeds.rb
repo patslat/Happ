@@ -22,11 +22,11 @@ today = DateTime.now
   Rating.create(
     :day_id => day_model.id,
     :user_id => 2,
-    :overall_rating => ((idx / 100.0) * 10.0),
-    :sleep_rating => ((idx / 100.0) * 6.0),
-    :diet_rating => ((idx / 100.0) * 7.0),
-    :exercise_rating => ((idx / 100.0) * 8.0),
-    :social_rating => ((idx / 100.0) * 5.0)
+    :overall_rating => (10 - rand),
+    :sleep_rating => (7 - rand),
+    :diet_rating => (6 - rand),
+    :exercise_rating => (9 - rand),
+    :social_rating => (8 - rand)
   )
 
 end

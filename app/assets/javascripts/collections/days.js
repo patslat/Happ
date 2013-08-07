@@ -5,9 +5,9 @@ Happ.Collections.Days = Backbone.Collection.extend({
 
   getData: function(column_name) {
     var n = this.length,
-    x = -1.0,
-    xmin = -1.0,
-    xmax = 7,
+    x = 0,
+    xmin = 0,
+    xmax = 10,
     step = ((xmax - xmin) / n),
     data = this.map(function(day) {
       x += step;

@@ -1,4 +1,7 @@
 <div>
+  <div class="summary-link">
+    <h1><a href="#/summary">Summary</a></h1>
+  </div>
   <ul>
     <% collection.each(function(day) { %>
       <li><a href="#/days/<%= day.id %>"><%= day.escape("date") %></a></li>

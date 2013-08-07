@@ -6,8 +6,8 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "summary": "summary",
     "days/:id": "show",
+    "summary": "summary",
   },
 
   index: function() {
@@ -23,6 +23,8 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   summary: function() {
     var content = new Happ.Views.DaysSummary({ collection: this.collection });
-    this.$content.html(content.render().$el);
-  }
+    // append a container for d3 to render graph in
+    this.$content.html('<div id="graph"></div>');
+    content.render();
+  },
 });
