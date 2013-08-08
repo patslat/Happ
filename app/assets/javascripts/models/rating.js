@@ -9,7 +9,7 @@ Happ.Models.Rating = Backbone.Model.extend({
     ];
   },
 
-  printableRatingNames: function () {
+  readableNames: function () {
     return _(this.ratingNames()).map(function(name) {
         var new_name = name.replace(/_/, " ")
         new_name = new_name[0].toUpperCase() + new_name.slice(1, new_name.length);

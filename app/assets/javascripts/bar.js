@@ -60,8 +60,8 @@ function barGraph() {
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.rating); })
           .attr("height", function(d) { return height - y(d.rating); })
-          .attr("fill", function(d) { return d.color });
-
+          .attr("fill", function(d) { return d.color })
+          .attr("class", function(d) { return d.ratingName })
 
     return bar;
   };

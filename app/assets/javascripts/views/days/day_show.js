@@ -7,6 +7,10 @@ Happ.Views.DayShow = Backbone.View.extend({
 
   template: JST['days/show'],
 
+  events: {
+    "click .bar-name": "toggleBar"
+  },
+
   render: function() {
     this.$el.html(this.template({
       model: this.model,
@@ -19,7 +23,7 @@ Happ.Views.DayShow = Backbone.View.extend({
   appendGraph: function() {
     var rating = this.model.get("rating");
     var ratingData = [],
-        readableNames = rating.printableRatingNames()
+        readableNames = rating.readableNames()
         colors = ["blue", "red", "yellow", "purple", "green"];
     rating.ratingNames().forEach(function(name, idx) {
       ratingData.push({
@@ -33,4 +37,9 @@ Happ.Views.DayShow = Backbone.View.extend({
     bar(".single-day-graph");
     bar.draw(ratingData);
   },
+
+  toggleBar: function(event) {
+   var barName = $(event.currentTarget).attr("data-bar-name");
+   $("." + barName).toggle();
+  }
 });
