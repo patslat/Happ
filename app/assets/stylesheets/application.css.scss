@@ -21,6 +21,21 @@
   margin: 7%;
 }
 
+.day-text {
+  width: 50%;
+  float: left;
+}
+
+.day-info {
+  margin: 20px;
+  text-align: center;
+}
+
+.navigation-arrows {
+  text-align: center;
+  font-size: 30px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -56,4 +71,18 @@ path.axis {
 path.bgline {
     stroke: white;
     stroke-width: 6px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+}
+
+.x.axis path {
+  display: none;
 }

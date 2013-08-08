@@ -1,20 +1,27 @@
-<div class="day-info">
-  <h1><%= model.escape("date") %></h1>
-  <h3>Overall: <%= model.get("rating").escape("overall_rating").slice(0, 4) %></h3>
-  <h3>Sleep Rating: <%= model.get("rating").escape("sleep_rating").slice(0, 4) %></h3>
-  <h3>Diet Rating: <%= model.get("rating").escape("diet_rating").slice(0, 4) %></h3>
-  <h3>Exercise Rating: <%= model.get("rating").escape("exercise_rating").slice(0, 4) %></h3>
-  <h3>Social Rating: <%= model.get("rating").escape("social_rating").slice(0, 4) %></h3>
-</div>
-<div class="navigation-arrows row">
-  <div class="left-arrow col-1">
-    <% if (previous) { %>
-      <h1><a href="#/days/<%= previous.id %>"><<</a></h1>
-    <% } %>
+<div class="day-show">
+  <div class="day-text">
+    <div class="day-info">
+      <h1><%= model.escape("date") %></h1>
+      <h3>Overall: <%= model.get("rating").escape("overall_rating").slice(0, 4) %></h3>
+      <h3>Sleep Rating: <%= model.get("rating").escape("sleep_rating").slice(0, 4) %></h3>
+      <h3>Diet Rating: <%= model.get("rating").escape("diet_rating").slice(0, 4) %></h3>
+      <h3>Exercise Rating: <%= model.get("rating").escape("exercise_rating").slice(0, 4) %></h3>
+      <h3>Social Rating: <%= model.get("rating").escape("social_rating").slice(0, 4) %></h3>
+    </div>
+
+    <div class="navigation-arrows">
+      <span class="left-arrow">
+        <% if (previous) { %>
+          <a href="#/days/<%= previous.id %>"><strong><<</strong></a>
+        <% } %>
+      </span>
+      <span class="right-arrow">
+        <% if (next) { %>
+          <a href="#/days/<%= next.id %>"><strong>>></strong></a>
+        <% } %>
+      </span>
+    </div>
   </div>
-  <div class="right-arrow offset-1 col-1">
-    <% if (next) { %>
-      <h1><a href="#/days/<%= next.id %>">>></a></h1>
-    <% } %>
-  </div>
+
+  <div class="single-day-graph"></div>
 </div>

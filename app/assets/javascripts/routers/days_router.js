@@ -5,9 +5,14 @@ Happ.Routers.Days = Backbone.Router.extend({
   },
 
   routes: {
+    "": "today",
     "days": "index",
     "days/:id": "show",
     "summary": "summary",
+  },
+
+  today: function() {
+    // TODO today view or form
   },
 
   index: function() {
@@ -26,6 +31,7 @@ Happ.Routers.Days = Backbone.Router.extend({
       previous: previous
     });
     this.$content.html(content.render().$el);
+    content.appendGraph();
   },
 
   summary: function() {

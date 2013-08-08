@@ -14,5 +14,23 @@ Happ.Views.DayShow = Backbone.View.extend({
       next: this.next
     }));
     return this;
-  }
+  },
+
+  appendGraph: function() {
+    var rating = this.model.get("rating");
+    var ratingData = [],
+        readableNames = rating.printableRatingNames()
+        colors = ["blue", "red", "yellow", "purple", "green"];
+    rating.ratingNames().forEach(function(name, idx) {
+      ratingData.push({
+        ratingName: name,
+        rating: rating.get(name),
+        readableName: readableNames[idx],
+        color: colors[idx]
+      })
+    })
+    var bar = barGraph();
+    bar(".single-day-graph");
+    bar.draw(ratingData);
+  },
 });
