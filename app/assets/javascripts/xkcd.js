@@ -3,7 +3,7 @@ function xkcdplot() {
     // Default parameters.
     var width = 600,
         height = 500,
-        margin = 20,
+        margin = 50,
         arrowSize = 12,
         arrowAspect = 0.4,
         arrowOffset = 6,
@@ -153,11 +153,14 @@ function xkcdplot() {
                              .style("stroke-width", 3)
                              .style("fill", "none")
                              .attr("class", "bgline")
+                             .attr("class", element.opts.className)
         el.append("text").attr("class", "x label")
                               .attr("text-anchor", "begin")
                               .attr("x", width - 75)
                               .attr("y", height - aa)
                               .attr("dy", ".75em")
+                              .attr("data-line-name", element.opts.className)
+                              .attr("class", "legend-item")
                               .text(element.opts.name);
         aa += 25;
       });
@@ -173,11 +176,13 @@ function xkcdplot() {
                              .style("stroke", "white")
                              .style("stroke-width", 2 * strokeWidth + "px")
                              .style("fill", "none")
-                             .attr("class", "bgline");
+                             .attr("class", "bgline")
+                             .attr("class", opts.className);
         el.append("svg:path").attr("d", line(data))
                              .style("stroke", color)
                              .style("stroke-width", strokeWidth + "px")
-                             .style("fill", "none");
+                             .style("fill", "none")
+                             .attr("class", opts.className);
     };
 
     // XKCD-style line interpolation. Roughly based on:
