@@ -69,6 +69,8 @@ GEM
       rails (~> 3.0)
     daemons (1.1.9)
     database_cleaner (1.1.1)
+    datejs-rails (2.0.1)
+      railties (>= 3.1)
     debug_inspector (0.0.2)
     devise (3.0.1)
       bcrypt-ruby (~> 3.0)
@@ -196,6 +198,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
+  datejs-rails
   devise
   email_spec
   figaro

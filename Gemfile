@@ -12,6 +12,7 @@ gem 'backbone-on-rails'
 gem 'devise'
 gem 'figaro'
 gem 'sendgrid'
+gem 'datejs-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

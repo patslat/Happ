@@ -1,9 +1,9 @@
 <div class="day-show">
-  <div class="day-text">
-    <div class="day-info">
-      <div class="day-date">
-        <h1><%= model.escape("date") %></h1>
-      </div>
+  <div class="day-date date">
+    <h1><%= model.escape("date") %></h1>
+  </div>
+  <div class="rating-text">
+    <div class="rating-info">
       <% var rating = this.model.get("rating") %>
       <% var readableNames = rating.readableNames() %>
       <% rating.ratingNames().forEach(function(name, idx) { %>

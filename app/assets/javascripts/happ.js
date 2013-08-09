@@ -9,7 +9,7 @@ window.Happ = {
       success: function(collection) {
         new Happ.Routers.Days($content, days);
         Backbone.history.start();
-        Backbone.history.navigate("#/days/" + collection.last().id);
+        Backbone.history.navigate("#/days/today");
       }
     })
   }

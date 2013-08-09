@@ -1,0 +1,14 @@
+<div class="new-entry">
+  <div class="date">
+    <h1><%= Date.today().toString("ddd, dd MMM yyyy") %></h1>
+  </div>
+
+  <div class="new-rating">
+    <form id="rating-form">
+      <label for="rating-overall"><h3>Overall: </h3></label>
+      <input type="range" id="rating-overall" name="rating[overall_rating]"
+        min="0" max="10" value="9" step=".01">
+    </form>
+  </div>
+
+</div>
