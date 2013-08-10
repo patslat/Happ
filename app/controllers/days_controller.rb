@@ -3,11 +3,11 @@ class DaysController < ApplicationController
   respond_to :html, :json
 
   def create
-    @day = current_user.days.build
-    if @day.save!
-      redirect_to :index
+    @day = current_user.days.build(params[:day])
+    if @day.save
+      render :json => @day
     else
-      render :new
+      render :json => false
     end
   end
 

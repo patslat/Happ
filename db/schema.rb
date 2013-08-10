@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806212836) do
+ActiveRecord::Schema.define(:version => 20130809215033) do
 
   create_table "days", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20130806212836) do
   add_index "days", ["user_id"], :name => "index_days_on_user_id"
 
   create_table "ratings", :force => true do |t|
-    t.integer  "user_id",         :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "day_id"
@@ -33,8 +32,6 @@ ActiveRecord::Schema.define(:version => 20130806212836) do
     t.float    "social_rating"
     t.float    "overall_rating"
   end
-
-  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

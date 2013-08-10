@@ -5,10 +5,22 @@ Happ.Routers.Days = Backbone.Router.extend({
   },
 
   routes: {
+    "": "home",
     "days": "index",
     "days/today": "today",
     "days/:id": "show",
     "summary": "summary",
+  },
+
+  home: function() {
+    this.model = this.collection.last();
+    var lastDay = this.model.get("date"),
+        today = Date.today().toString("ddd, dd MMM yyyy");
+    if (lastDay !== today) {
+      Backbone.history.navigate("#/days/today");
+    } else {
+      Backbone.history.navigate("#/days/" + this.model.get("id"));
+    }
   },
 
   today: function() {
@@ -18,7 +30,11 @@ Happ.Routers.Days = Backbone.Router.extend({
         today = Date.today().toString("ddd, dd MMM yyyy");
 
     if (lastDay !== today) {
-      var content = new Happ.Views.DayNew();
+      var content = new Happ.Views.DayNew({
+        collection: this.collection,
+        last: this.model,
+        date: today
+      });
       this.$content.html(content.render().$el);
     } else {
       Backbone.history.navigate("#/days/" + this.model.get("id"));
@@ -35,6 +51,7 @@ Happ.Routers.Days = Backbone.Router.extend({
     var index = this.collection.indexOf(this.model);
         previous = this.collection.at(index - 1),
         next = this.collection.at(index + 1);
+
     var content = new Happ.Views.DayShow({
       model: this.model,
       next: next,

@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   has_many :days
-  has_many :ratings
+  has_many :ratings, :through => :days
 end
