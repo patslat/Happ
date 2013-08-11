@@ -14,6 +14,8 @@
 
 body {
   background-color: #E8FFFB !important;
+
+  color: #486B7F !important;
 }
 
 .happ-brand {
@@ -27,9 +29,18 @@ a {
   background-color: #DCF2FF !important;
 }
 
+.jumbotron {
+  background-color: #DCF2FF !important;
+}
+
+.btn-primary {
+  background-color: #8FD6FF !important;
+}
+
 .panel {
   background-color: #DCF2FF !important;
   border-color: #9CA1CC !important;
+  border: none !important;
 }
 
 .content {
@@ -38,7 +49,7 @@ a {
 
 .description {
   text-align: center;
-  margin: 7%;
+  margin: 5%;
 }
 
 .date {
@@ -47,7 +58,6 @@ a {
 
 .rating-text {
   width: 45%;
-  float: left;
 }
 
 .rating-info {
@@ -59,8 +69,21 @@ a {
   font-size: 30px;
 }
 
+.navigation-arrows .left-arrow {
+  margin-right: 20%;
+}
+
+.navigation-arrows .right-arrow {
+  margin-left: 20%;
+}
+
+.navigation-arrows .arrow {
+  background-color: transparent !important;
+}
+
 .single-day-graph {
   width: 50%;
+  float: right;
 }
 
 ul {

@@ -1,8 +1,23 @@
 <div class="day-show">
+
+  <div class="navigation-arrows panel">
+    <span class="left-arrow">
+      <% if (previous) { %>
+        <a class="arrow btn btn-primary pull-left" href="#/days/<%= previous.id %>"><strong><<</strong></a>
+      <% } %>
+    </span>
+    <span class="right-arrow">
+      <% if (next) { %>
+        <a class="arrow btn btn-primary pull-right" href="#/days/<%= next.id %>"><strong>>></strong></a>
+      <% } %>
+    </span>
+  </div>
+
   <div class="day-date date panel">
     <h2><%= model.escape("date") %></h2>
   </div>
-  <div class="rating-text">
+
+  <div class="rating-text pull-left">
     <div class="rating-info">
       <% var rating = this.model.get("rating") %>
       <% var readableNames = rating.readableNames() %>
@@ -12,20 +27,8 @@
         </div>
       <% }) %>
     </div>
-
-    <div class="navigation-arrows panel">
-      <span class="left-arrow">
-        <% if (previous) { %>
-          <a href="#/days/<%= previous.id %>"><strong><<</strong></a>
-        <% } %>
-      </span>
-      <span class="right-arrow">
-        <% if (next) { %>
-          <a href="#/days/<%= next.id %>"><strong>>></strong></a>
-        <% } %>
-      </span>
-    </div>
   </div>
+
 
   <div class="single-day-graph panel pull-right"></div>
 </div>
