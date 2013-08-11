@@ -1,19 +1,19 @@
 <div class="day-show">
-  <div class="day-date date">
-    <h1><%= model.escape("date") %></h1>
+  <div class="day-date date panel">
+    <h2><%= model.escape("date") %></h2>
   </div>
   <div class="rating-text">
     <div class="rating-info">
       <% var rating = this.model.get("rating") %>
       <% var readableNames = rating.readableNames() %>
       <% rating.ratingNames().forEach(function(name, idx) { %>
-        <div class="bar-name" data-bar-name="<%= name %>">
+        <div class="bar-name panel" data-bar-name="<%= name %>">
           <h3><%= readableNames[idx] %>: <%= String(rating.get(name)).slice(0, 4) %></h3>
         </div>
       <% }) %>
     </div>
 
-    <div class="navigation-arrows">
+    <div class="navigation-arrows panel">
       <span class="left-arrow">
         <% if (previous) { %>
           <a href="#/days/<%= previous.id %>"><strong><<</strong></a>
@@ -27,5 +27,5 @@
     </div>
   </div>
 
-  <div class="single-day-graph"></div>
+  <div class="single-day-graph panel pull-right"></div>
 </div>

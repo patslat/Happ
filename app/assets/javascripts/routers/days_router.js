@@ -57,6 +57,7 @@ Happ.Routers.Days = Backbone.Router.extend({
       next: next,
       previous: previous
     });
+
     this.$content.html(content.render().$el);
     content.appendGraph();
   },

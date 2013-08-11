@@ -12,6 +12,26 @@
  *= require_tree .
 */
 
+body {
+  background-color: #E8FFFB !important;
+}
+
+.happ-brand {
+}
+
+a {
+  color: #474F99 !important;
+}
+
+.navbar {
+  background-color: #DCF2FF !important;
+}
+
+.panel {
+  background-color: #DCF2FF !important;
+  border-color: #9CA1CC !important;
+}
+
 .content {
   text-align: center;
 }
@@ -26,18 +46,21 @@
 }
 
 .rating-text {
-  width: 50%;
+  width: 45%;
   float: left;
 }
 
 .rating-info {
-  margin: 20px;
   text-align: center;
 }
 
 .navigation-arrows {
   text-align: center;
   font-size: 30px;
+}
+
+.single-day-graph {
+  width: 50%;
 }
 
 ul {
