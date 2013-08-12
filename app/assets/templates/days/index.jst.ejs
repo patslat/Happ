@@ -1,7 +1,11 @@
 <div>
   <ul>
-    <% collection.each(function(day) { %>
-      <li><a href="#/days/<%= day.id %>"><%= day.escape("date") %></a></li>
+    <% collection.toArray().reverse().forEach(function(day) { %>
+      <li>
+        <div class="date-link">
+          <a href="#/days/<%= day.id %>"><%= day.escape("date") %></a>
+        </div>
+      </li>
     <% }) %>
   </ul>
 </div>

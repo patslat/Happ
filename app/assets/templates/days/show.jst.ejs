@@ -1,20 +1,21 @@
 <div class="day-show">
 
-  <div class="navigation-arrows panel">
-    <span class="left-arrow">
-      <% if (previous) { %>
-        <a class="arrow btn btn-primary pull-left" href="#/days/<%= previous.id %>"><strong><<</strong></a>
-      <% } %>
-    </span>
-    <span class="right-arrow">
-      <% if (next) { %>
-        <a class="arrow btn btn-primary pull-right" href="#/days/<%= next.id %>"><strong>>></strong></a>
-      <% } %>
-    </span>
-  </div>
-
   <div class="day-date date panel">
-    <h2><%= model.escape("date") %></h2>
+    <div class="navigation-arrows">
+      <span class="left-arrow">
+        <% if (previous) { %>
+          <a class="arrow btn btn-primary pull-left" href="#/days/<%= previous.id %>"><strong><<</strong></a>
+        <% } %>
+      </span>
+
+      <span class="date-text"><strong><%= model.escape("date") %></strong></span>
+
+      <span class="right-arrow">
+        <% if (next) { %>
+          <a class="arrow btn btn-primary pull-right" href="#/days/<%= next.id %>"><strong>>></strong></a>
+        <% } %>
+      </span>
+    </div>
   </div>
 
   <div class="rating-text pull-left">
@@ -28,7 +29,6 @@
       <% }) %>
     </div>
   </div>
-
 
   <div class="single-day-graph panel pull-right"></div>
 </div>

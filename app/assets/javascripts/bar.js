@@ -6,7 +6,7 @@ function barGraph() {
     left: 60
   },
     width = 350 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 475 - margin.top - margin.bottom;
 
   var formatPercent = d3.format(".0%");
 

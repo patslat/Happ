@@ -14,11 +14,30 @@
 
 body {
   background-color: #E8FFFB !important;
-
   color: #486B7F !important;
 }
 
+#days-summary {
+}
+
+#dates-index {
+  height: 200px;
+  overflow: scroll;
+}
+
+.date-link {
+  text-align: center;
+  padding: 5px;
+}
+
+.date-text {
+  text-align: center !important;
+  font-size: 30px !important;
+  width: 50% !important;
+}
+
 .happ-brand {
+  font-size: 30px !important;
 }
 
 a {
@@ -66,7 +85,6 @@ a {
 
 .navigation-arrows {
   text-align: center;
-  font-size: 30px;
 }
 
 .navigation-arrows .left-arrow {
