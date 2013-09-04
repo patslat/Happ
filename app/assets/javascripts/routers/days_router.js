@@ -53,7 +53,6 @@ Happ.Routers.Days = Backbone.Router.extend({
     var index = this.collection.indexOf(this.model);
         previous = this.collection.at(index - 1),
         next = this.collection.at(index + 1);
-    console.log(this.collection.page);
 
     var content = new Happ.Views.DayShow({
       model: this.model,

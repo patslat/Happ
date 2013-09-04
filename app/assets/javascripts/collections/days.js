@@ -20,7 +20,7 @@ Happ.Collections.Days = Backbone.Collection.extend({
   },
 
   parse: function(response) {
-    this.currentPage = response.page;
+    this.currentPage = parseInt(response.page);
     this.totalPages = response.total;
     return response.models;
   },
