@@ -43,7 +43,6 @@ Happ.Routers.Days = Backbone.Router.extend({
   },
 
   index: function(page) {
-    var page = page || 1;
     var content = new Happ.Views.DaysIndex({ collection: this.collection });
     this.$content.html(content.render().$el);
   },
@@ -53,15 +52,35 @@ Happ.Routers.Days = Backbone.Router.extend({
     var index = this.collection.indexOf(this.model);
         previous = this.collection.at(index - 1),
         next = this.collection.at(index + 1);
+        self = this;
 
-    var content = new Happ.Views.DayShow({
-      model: this.model,
-      next: next,
-      previous: previous
-    });
+    if (!previous && (this.collection.currentPage < this.collection.totalPages)) {
+      this.collection.fetch({
+        wait: true,
+        remove: false,
+        data: { page: this.collection.currentPage + 1 },
+        success: function () {
+          index = self.collection.indexOf(self.model);
+          previous = self.collection.at(index - 1);
+          var content = new Happ.Views.DayShow({
+            model: self.model,
+            next: next,
+            previous: previous
+          });
+          self.$content.html(content.render().$el);
+          content.appendGraph();
+        }
+      });
+    } else {
+      var content = new Happ.Views.DayShow({
+        model: this.model,
+        next: next,
+        previous: previous
+      });
 
-    this.$content.html(content.render().$el);
-    content.appendGraph();
+      this.$content.html(content.render().$el);
+      content.appendGraph();
+    }
   },
 
   summary: function() {

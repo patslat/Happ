@@ -3,6 +3,10 @@ Happ.Collections.Days = Backbone.Collection.extend({
   model: Happ.Models.Day,
   url: "/days",
 
+  comparator: function(day) {
+    return day.id;
+  },
+
   getData: function(column_name) {
     var n = this.length,
     x = 0,

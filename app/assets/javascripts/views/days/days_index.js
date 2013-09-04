@@ -3,9 +3,6 @@ Happ.Views.DaysIndex = Backbone.View.extend({
   initialize: function(options) {
     this.collection = options.collection;
     var self = this;
-    this.collection.on("sync", function() {
-      self.render();
-    });
     this.collection.on("add", function() {
       self.render();
     });
@@ -22,6 +19,7 @@ Happ.Views.DaysIndex = Backbone.View.extend({
       {
         $("window").off("scroll", nextPage);
         $(".days-list").append($('<li class="loading"><h3>Loading more...</h3></li>'));
+
         self.collection.fetch({
           wait: true,
           remove: false,
@@ -30,6 +28,7 @@ Happ.Views.DaysIndex = Backbone.View.extend({
             self.collection.currentPage += 1;
           }
         });
+
       } else if (self.collection.currentPage === self.collection.totalPages) {
         $('.loading').remove();
         $(window).off("scroll", nextPage);
@@ -37,7 +36,7 @@ Happ.Views.DaysIndex = Backbone.View.extend({
     }
 
     $('.loading').remove();
-    this.$el.html(this.template({collection: this.collection}));
+    this.$el.html(this.template({ collection: this.collection }));
     $(window).on("scroll", nextPage);
     return this;
   },
