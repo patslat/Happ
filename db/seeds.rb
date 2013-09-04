@@ -14,14 +14,13 @@ puts 'user: ' << user.name
 u = User.create(:name => "p", :email => "p@g.com", :password => "12345678", :password_confirmation => "12345678")
 
 today = DateTime.now
-((today - 100)..today).each_with_index do |day, idx|
+((today - 1000)..today).each_with_index do |day, idx|
   day_model = Day.create(:user_id => 2)
   day_model.date = day.to_date.readable_inspect
   day_model.save!
 
   Rating.create(
     :day_id => day_model.id,
-    :user_id => 2,
     :overall_rating => (10 - rand),
     :sleep_rating => (7 - rand),
     :diet_rating => (6 - rand),

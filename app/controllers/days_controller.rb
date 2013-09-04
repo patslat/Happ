@@ -12,8 +12,20 @@ class DaysController < ApplicationController
   end
 
   def index
-    @days = current_user.days.includes(:rating)
-    render :json => @days
+    #refactor plz
+    if params[:page]
+      @days = current_user.days.includes(:rating)
+        .order("created_at desc")
+        .page(params[:page])
+      render :json => {
+        :models => @days.reverse,
+        :page => params[:page],
+        :total => @days.num_pages
+      }
+    else
+      @days = current_user.days.includes(:rating)
+      render :json => { :models => @days }
+    end
   end
 
   def show

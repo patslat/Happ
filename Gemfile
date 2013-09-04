@@ -7,6 +7,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'jquery-rails'
 gem 'backbone-on-rails'
 gem 'devise'
@@ -14,6 +15,8 @@ gem 'figaro'
 gem 'sendgrid'
 gem 'datejs-rails'
 gem 'twilio-ruby'
+gem 'kaminari'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

@@ -109,12 +109,12 @@ ul {
 }
 
 @font-face {
-    font-family: "xkcd";
-    src: url('http://antiyawn.com/uploads/Humor-Sans.ttf');
+    font-family: "xkcd" !important;
+    src: url('http://antiyawn.com/uploads/Humor-Sans.ttf') !important;
 }
 
 #graph {
-    font-family: "xkcd", sans-serif;
+    font-family: "xkcd", sans-serif !important;
     font-size: 16px;
     color: #333;
     text-align: center;

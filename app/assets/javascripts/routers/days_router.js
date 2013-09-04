@@ -6,7 +6,8 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   routes: {
     "": "home",
-    "days": "index",
+    "entries": "index",
+    "entries/page":"index",
     "days/today": "today",
     "days/:id": "show",
     "summary": "summary",
@@ -41,7 +42,8 @@ Happ.Routers.Days = Backbone.Router.extend({
     }
   },
 
-  index: function() {
+  index: function(page) {
+    var page = page || 1;
     var content = new Happ.Views.DaysIndex({ collection: this.collection });
     this.$content.html(content.render().$el);
   },
@@ -51,6 +53,7 @@ Happ.Routers.Days = Backbone.Router.extend({
     var index = this.collection.indexOf(this.model);
         previous = this.collection.at(index - 1),
         next = this.collection.at(index + 1);
+    console.log(this.collection.page);
 
     var content = new Happ.Views.DayShow({
       model: this.model,
@@ -63,8 +66,15 @@ Happ.Routers.Days = Backbone.Router.extend({
   },
 
   summary: function() {
-    var content = new Happ.Views.DaysSummary({ collection: this.collection });
-    this.$content.html(content.render().$el);
-    content.renderGraph();
+    var self = this;
+    this.$content.html($("<h1>CRUNCHING NUMBERS YO</h1>"));
+    this.collection.fetch({
+      reset: true,
+      success: function () {
+        var content = new Happ.Views.DaysSummary({ collection: self.collection });
+        self.$content.html(content.render().$el);
+        content.renderGraph();
+      }
+    });
   },
 });
