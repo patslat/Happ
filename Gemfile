@@ -16,6 +16,7 @@ gem 'sendgrid'
 gem 'datejs-rails'
 gem 'twilio-ruby'
 gem 'kaminari'
+gem 'delayed_job_active_record'
 
 group :development do
   gem 'better_errors'
