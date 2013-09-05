@@ -23,6 +23,7 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'hub', :require=>nil
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 group :development, :test do
   gem 'rspec-rails'
