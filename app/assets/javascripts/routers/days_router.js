@@ -14,7 +14,8 @@ Happ.Routers.Days = Backbone.Router.extend({
   },
 
   home: function() {
-    this.model = this.collection.last();
+    this.model = this.collection.last()
+    if (!this.model) Backbone.history.navigate("#/days/today");
     var lastDay = this.model.get("date"),
         today = Date.today().toString("ddd, dd MMM yyyy");
     if (lastDay !== today) {
@@ -26,7 +27,10 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   today: function() {
     // TODO today view or form
-    this.model = this.collection.last();
+    this.model = this.collection.last() ||
+      new Happ.Models.Day({
+        date: Date.today().toString("ddd, dd MMM, yyyy")
+      });
     var lastDay = this.model.get("date"),
         today = Date.today().toString("ddd, dd MMM yyyy");
 

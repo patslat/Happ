@@ -17,6 +17,7 @@ gem 'datejs-rails'
 gem 'twilio-ruby'
 gem 'kaminari'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :development do
   gem 'better_errors'

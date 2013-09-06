@@ -213,6 +213,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
   cucumber-rails
+  daemons
   database_cleaner
   datejs-rails
   delayed_job_active_record

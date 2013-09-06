@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :welcome
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,4 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :days
   has_many :ratings, :through => :days
+
+  def welcome
+    UserMailer.delay.welcome_email(self)
+  end
 end
