@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
   has_many :ratings, :through => :days
 
   def welcome
-    UserMailer.delay.welcome_email(self)
+    UserMailer.welcome_email(self).deliver
   end
 end

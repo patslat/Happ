@@ -11,7 +11,7 @@ puts 'DEFAULT USERS'
 user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
 puts 'user: ' << user.name
 
-u = User.create(:name => "p", :email => "p@g.com", :password => "12345678", :password_confirmation => "12345678")
+u = User.create(:name => "test", :email => "test@test.com", :password => "12345678", :password_confirmation => "12345678")
 
 today = DateTime.now
 ((today - 1000)..today).each_with_index do |day, idx|
