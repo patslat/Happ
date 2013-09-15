@@ -17,7 +17,27 @@ Happ.Views.DayNew = Backbone.View.extend({
       date: this.date,
       last: this.last
     }));
+
+    this.installTooltip();
+
     return this;
+  },
+
+  installTooltip: function () {
+    this.$(".rating-input")
+      .tooltip({
+        title: function () { return this.value },
+        placement: "right",
+        delay: { hide: 500 }
+      })
+      .on("change", function () {
+        var self = this;
+        setTimeout( function () {
+          $(self)
+          .attr("data-original-title", self.value)
+          .tooltip("show");
+        }, 1)
+      })
   },
 
   create: function(event) {
