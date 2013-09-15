@@ -8,10 +8,11 @@
 
       <% var ratings = ["overall", "sleep", "exercise", "diet", "social"] %>
       <% ratings.forEach(function(name) { %>
-        <div class="<%= name %>-field">
+        <div class="rating-input <%= name %>-field">
           <label for="rating-<%= name %>"><h3><%= name %>: </h3></label>
           <input type="range" id="rating-<%= name %>" name="day[rating_attributes][<%= name %>_rating]"
             min="0" max="10" value="9" step=".01">
+        </div>
       <% }) %>
       <div class="submit">
         <button type="button" id="new-rating" class="btn btn-primary">Submit</button>
