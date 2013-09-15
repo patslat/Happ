@@ -89,7 +89,7 @@ Happ.Routers.Days = Backbone.Router.extend({
 
   summary: function() {
     var self = this;
-    this.$content.html($("<h1>CRUNCHING NUMBERS YO</h1>"));
+    this.$content.html($("<h1>Loading Summary...</h1>"));
     this.collection.fetch({
       reset: true,
       success: function () {
