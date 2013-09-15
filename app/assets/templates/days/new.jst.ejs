@@ -12,7 +12,7 @@
           <label for="rating-<%= name %>"><h3><%= name %>: </h3></label>
           <input type="range" id="rating-<%= name %>" class="rating-input"
             name="day[rating_attributes][<%= name %>_rating]"
-            min="0" max="10" default-value="9" step=".01">
+            min="0" max="10" value="9" step=".01">
         </div>
       <% }) %>
       <div class="submit">
