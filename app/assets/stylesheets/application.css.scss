@@ -90,8 +90,13 @@ a {
 .tooltip-inner {
   background-color: #9CA1CF !important;
 }
-.tooltip-arrow {
+
+.rating-input-field .tooltip-arrow {
   border-right-color: #9CA1CF !important;
+}
+
+.jumbotron .tooltip-arrow {
+  border-bottom-color: #9CA1CF !important;
 }
 
 .back {
