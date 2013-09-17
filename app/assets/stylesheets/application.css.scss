@@ -130,7 +130,7 @@ ul {
 
 @font-face {
     font-family: "xkcd" !important;
-    src: url('http://antiyawn.com/uploads/Humor-Sans.ttf') !important;
+    src: asset-url('Humor-Sans-1.0.ttf', font) !important;
 }
 
 #graph {
